@@ -1,0 +1,6 @@
+[WAN-Transit]
+    base = "DCS-7050X3-S32"
+    role = 'wan-transit'
+
+    interfaces."Ethernet[21-22]/1"           = {role='transit-wan',     speed=100, optic='QSFP-100G-LR4',     ctype='smf'}
+    interfaces."Ethernet[23-30]/1"           = {role='transit-spine',   speed=100, optic='QSFP-100G-CWDM4',   ctype='smf'}

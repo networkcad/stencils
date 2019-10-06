@@ -1,0 +1,160 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!
+# !!!!!                       ARISTA VENDOR STENCILS
+# !!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+[AristaEOS-L2]
+    vendor = 'arista'
+    interfaces."Console"                    = {ptype="rj45", role='console',    ctype='console'}
+    interfaces."Management1"                = {ptype="rj45", role='management', ctype='cat6'}
+
+
+[AristaEOS]
+    vendor = 'arista'
+
+    interfaces."Console"                    = {ptype="rj45", role='console',    ctype='console'}
+    interfaces."Management1"                = {ptype="rj45", role='management', ctype='cat6'}
+    interfaces."Loopback0"                  = {ptype='loopback', role='loopback'}
+
+
+# #############################################################################
+#
+#                      L3 enabled switches
+#
+# #############################################################################
+
+[DCS-7050X3-48YC12]
+
+    # The Arista 7050SX3-48YC12 is a 1RU system with 48 ports of 25GbE
+    # SFP and 12 ports of 100GbE QSFP with an overall throughput of
+    # 4.8Tbps. The high density SFP ports can be configured in groups
+    # of 4 to run either at 25G or a mix of 10G/1G speeds. The QSFP
+    # ports allow for a choice of 5 speeds including 100GbE, 40GbE,
+    # 4x10GbE, 4x25GbE or 2x 50GbE with a wide choice of transceivers
+    # and cables enabling a choice of combinations for both leaf and
+    # spine deployment. With low latency and no oversubscription, the
+    # switch is optimized for high performance server and storage
+    # deployments.
+
+    base = "AristaEOS"
+    model = "DCS-7050X3-48YC12"
+    rack_size = 1
+
+    interfaces."Ethernet[1-48]"                 = {ptype="sfp"}
+    interfaces."Ethernet[49-60]/1"              = {ptype="qsfp"}
+
+
+[DCS-7050X3-S32]
+
+    # The 7050CX3-32S is a 1RU system with 32 100G QSFP ports offering
+    # wire speed throughput of up to 6.4 Tbps. Each QSFP port supports
+    # a choice of 5 speeds with flexible configuration between 100GbE,
+    # 40GbE, 4x10GbE, 4x25GbE or 2x50GbE modes for up to 128 ports of
+    # 10GbE and 25GbE or 64 ports of 50GbE. All ports can operate in
+    # any supported mode without limitation, allowing easy migration
+    # from lower speeds and the flexibility for leaf or spine
+    # deployment.
+
+    base = "AristaEOS"
+    model = "DCS-7050X3-S32"
+    rack_size = 1
+
+    interfaces."Ethernet[1-32]/1"              = {ptype="qsfp"}
+    interfaces."Ethernet[33-34]"               = {ptype="sfp"}
+
+
+[DCS-7020SR-32C2]
+
+    base = "AristaEOS"
+    model = "DCS-7020SR-32C2"
+
+
+    interfaces."Ethernet[1-32]"                   = {ptype="sfp"}
+    interfaces."Ethernet[33-34]/1"                = {ptype="qsfp"}
+
+
+[7280SR2K-48C6]
+    # https://www.arista.com/en/products/7280r-series-network-switch-datasheet
+    # https://www.arista.com/assets/data/pdf/Datasheets/7280R-DataSheet.pdf
+    # 7280SR2K-48C6: 24 port SFP+, 24 port 25GbE SFP and 6 ports
+    # 100GbE - Offers 48 wire speed SFP ports with 24 1/10G and 24
+    # 1/10/25G with FC and RS FEC - 25G SFP ports offer 25G or 10G/1G
+    # speeds configurable in groups of 4 - Six 100G QSFP ports allow
+    # choice of 6 x 100GbE, 24x 25GbE, 6x 40GbE, or 24x 10GbE -
+    # 2.88Tbps of wire speed performance with 4GB of buffer
+
+    base = "AristaEOS"
+    model = "7280SR2K-48C6"
+    rack_size = 1
+
+    interfaces."Ethernet[1-24]"             = {ptype="sfp"}
+    interfaces."Ethernet[25-48]"            = {ptype="sfp"}
+    interfaces."Ethernet[49-54]/1"          = {ptype="qsfp"}
+
+
+[7280CR2A-30]
+    # https://www.arista.com/en/products/7280r-series-network-switch-datasheet
+    # https://www.arista.com/assets/data/pdf/Datasheets/7280R-DataSheet.pdf
+    # 7280CR2A-30 and 7280CR2K-30: 30 port QSFP100
+    #  - Up to 30 100G ports with QSFP100
+    #  - Maximum of 120 ports of 10GbE or 25GbE with FC and RS FEC
+    #  - 6Tbps of wire speed performance with 12GB of buffer
+
+    base = "AristaEOS"
+    model = "7280CR2A-30"
+    rack_size = 1
+    interfaces."Ethernet[1-30]/1"             = {ptype='qsfp'}
+
+# #############################################################################
+#
+#              L2 only switches, no loopback to be used
+#
+# #############################################################################
+
+[DCS-7010T-48]
+
+    # https://www.arista.com/assets/data/pdf/Datasheets/7010T-48_Datasheet.pdf
+    # Featuring a choice of two models the 7010T Series provide a
+    # choice of AC or DC power. Both models have 48 10/100/1000Mb RJ45
+    # ports and 4 SFP+ ports for both 1G or 10G uplink connections
+    # with a full range of optics and cables.
+
+    base = "AristaEOS-L2"
+    model = "DCS-7010T-48"
+    rack_size = 1
+
+    interfaces."Ethernet[1-48]"             = {ptype = "rj45"}
+    interfaces."Ethernet[49-52]"            = {ptype = "sfp"}
+
+
+[DCS-7010T-48-R]
+
+    # https://www.arista.com/assets/data/pdf/Datasheets/7010T-48_Datasheet.pdf
+    # Featuring a choice of two models the 7010T Series provide a
+    # choice of AC or DC power. Both models have 48 10/100/1000Mb RJ45
+    # ports and 4 SFP+ ports for both 1G or 10G uplink connections
+    # with a full range of optics and cables.
+
+    base = "AristaEOS-L2"
+    model = "DCS-7010T-48"
+    rack_size = 1
+
+    interfaces."Ethernet[48-1,-1]"          = {ptype = "rj45"}
+    interfaces."Ethernet[49-52]"            = {ptype = "sfp"}
+
+
+[720XP-48ZC2]
+    # Arista POE Switch
+    #    1-40: PoE 100m,1g,2.5g
+    #    41-48: PoE 100m, 1g, 2.5g, 5g
+    #    49-52: 10g,25g
+    #    53-54: 40g,50g,100g
+
+    base = "AristaEOS-L2"
+    model = "DCS-720XP-48ZC2"
+    rack_size = 1
+
+    interfaces."Ethernet[1-48]"             = {ptype = "rj45"}
+    interfaces."Ethernet[49-52]"            = {ptype = "sfp"}
+    interfaces."Ethernet[53-54]/1"          = {ptype = "qsfp"}

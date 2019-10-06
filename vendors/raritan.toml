@@ -1,0 +1,24 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!
+# !!!!!                    VENDOR STENCILS: Raritan
+# !!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+# https://www.raritan.com/products/kvm-serial/serial-console-servers
+# https://www.raritan.com/assets/ram/resources/data_sheets/raritan-ds-sxii.pdf
+
+[RARITAN-DSX2-48]
+    vendor = 'raritan'
+    model = 'DSX2-48'
+
+    interfaces."E[1-2]"         = {ptype='rj45',    ctype='cat6'}
+    interfaces."P[1-48]"        = {ptype='rj45',    role='console'}
+
+
+[RARITAN-KSX2-188]
+    vendor = 'raritan'
+    model = 'KSX2-188'
+
+    interfaces."E[1-2]"         = {ptype='rj45',    ctype='cat6'}
+    interfaces."P[1-8]"         = {ptype='rj45',    role='kvm'}
+    interfaces."P[9-16]"        = {ptype='rj45',    role='console'}
