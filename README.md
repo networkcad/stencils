@@ -71,6 +71,8 @@ And now consider an example of an application stencil that would use the DCS-705
     interfaces."Ethernet[23-30]/1"           = {role='transit-spine',   speed=100, optic='QSFP-100G-CWDM4',   ctype='smf'}
 ````
 
+Now for a short python code example that loads these stencils into a stencil catalog, which then provides
+a registry by name of stencils with fully expanded data dictionaries.
 
 ````python
 from imnetdb.stencil import Stencils
@@ -99,7 +101,8 @@ Output:
 ['AristaEOS-L2', 'AristaEOS', 'DCS-7050X3-48YC12', 'DCS-7050X3-S32', 'DCS-7020SR-32C2', '7280SR2K-48C6', '7280CR2A-30', 'DCS-7010T-48', 'DCS-7010T-48-R', '720XP-48ZC2', 'WAN-Transit']
 ````
 
-# And we can see the compete `WAN-Transit` stencil dictionary structure
+And we can see the compete `WAN-Transit` stencil dictionary structure
+
 ````python
 from pprint import pprint
 pprint(stencil_catalog.register['WAN-Transit'])
