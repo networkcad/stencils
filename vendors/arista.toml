@@ -128,22 +128,6 @@
     interfaces."Ethernet[49-52]"            = {ptype = "sfp"}
 
 
-[DCS-7010T-48-R]
-
-    # https://www.arista.com/assets/data/pdf/Datasheets/7010T-48_Datasheet.pdf
-    # Featuring a choice of two models the 7010T Series provide a
-    # choice of AC or DC power. Both models have 48 10/100/1000Mb RJ45
-    # ports and 4 SFP+ ports for both 1G or 10G uplink connections
-    # with a full range of optics and cables.
-
-    base = "AristaEOS-L2"
-    model = "DCS-7010T-48"
-    rack_size = 1
-
-    interfaces."Ethernet[48-1,-1]"          = {ptype = "rj45"}
-    interfaces."Ethernet[49-52]"            = {ptype = "sfp"}
-
-
 [720XP-48ZC2]
     # Arista POE Switch
     #    1-40: PoE 100m,1g,2.5g

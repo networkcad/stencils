@@ -98,7 +98,7 @@ print(stencil_catalog.registry)
 
 Output:
 ````shell script
-['AristaEOS-L2', 'AristaEOS', 'DCS-7050X3-48YC12', 'DCS-7050X3-S32', 'DCS-7020SR-32C2', '7280SR2K-48C6', '7280CR2A-30', 'DCS-7010T-48', 'DCS-7010T-48-R', '720XP-48ZC2', 'WAN-Transit']
+['AristaEOS-L2', 'AristaEOS', 'DCS-7050X3-48YC12', 'DCS-7050X3-S32', 'DCS-7020SR-32C2', '7280SR2K-48C6', '7280CR2A-30', 'DCS-7010T-48', '720XP-48ZC2', 'WAN-Transit']
 ````
 
 And we can see the compete `WAN-Transit` stencil dictionary structure
