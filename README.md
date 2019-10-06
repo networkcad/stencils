@@ -213,5 +213,8 @@ Output:
 
 # Further Reading
 
-The stencils python module is part of the [IMNetDB](https://github.com/imnetdb/imnetdb) repository.  For more information, please refer to that
-project documentation.
+The stencils python module is part of the
+[IMNetDB](https://github.com/imnetdb/imnetdb) repository.  IMNetDB provides
+modules to create a network application database of Devices, Interfaces, and
+other common constructs, using the stenciling system.  For more information,
+please refer to that project documentation.
