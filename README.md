@@ -210,3 +210,8 @@ Output:
  'role': 'wan-transit',
  'vendor': 'arista'}
 ```
+
+# Further Reading
+
+The stencils python module is part of the [IMNetDB](https://github.com/imnetdb/imnetdb) repository.  For more information, please refer to that
+project documentation.
