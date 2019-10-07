@@ -1,0 +1,42 @@
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!
+# !!!!!                    VENDOR STENCILS: Palo-Alto
+# !!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+[Palo-Alto]
+    stub = true
+    vendor = 'palo'
+    interfaces."C1"                     = {ptype="rj45",  role='console',    ctype='console'}
+    interfaces."M1"                     = {ptype='rj45',  role='management', ctype='cat6'}
+
+
+[PA-7050]
+    base = 'Palo-Alto'
+    model = 'PA-7050'
+
+    interfaces."E1/[1-12]"                = {ptype='rj45',  speed=10}   # or 1g
+    interfaces."E1/[13-20]"               = {ptype='qsfp',  speed=40}
+    interfaces."E1/[21-24]"               = {ptype='qsfp',  speed=100}
+
+    interfaces."E2/[1-12]"                = {ptype='rj45',  speed=10}
+    interfaces."E2/[13-20]"               = {ptype='sfp',   speed=1}
+    interfaces."E2/[21-24]"               = {ptype='sfp',   speed=10}
+
+
+[PA-5050]
+    base = 'Palo-Alto'
+    model = 'PA-5050'
+
+    interfaces."E[1-12]"                = {ptype='rj45',  speed=1}
+    interfaces."E[13-20]"               = {ptype='sfp',   speed=1}
+    interfaces."E[21-24]"               = {ptype='sfp',   speed=10}
+
+
+[PA-3260]
+    base = 'Palo-Alto'
+    model = 'PA-3260'
+
+    interfaces."E[1-12]"                = {ptype='rj45',  speed=1}
+    interfaces."E[13-20]"               = {ptype='sfp',   speed=10}
+    interfaces."E[21-24]"               = {ptype='qsfp',  speed=40}
